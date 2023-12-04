@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import ProductList from './ProductList';
+import ProductList from './ProductList.js';
 // Importieren Sie weitere Komponenten, die Sie benötigen
 
 function App() {
