@@ -1,4 +1,5 @@
 import React from 'react';
+import products from './products';
 
 function ProductDetail({ match }) {
 	// Hier könnten Sie Logik hinzufügen, um Produktdetails basierend auf der ID zu laden
