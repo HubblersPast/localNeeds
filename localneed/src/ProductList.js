@@ -1,5 +1,6 @@
 import React from 'react';
-import './ProductList.css';
+import { Link } from 'react-router-dom';
+import './ProductList.css'; // Stellen Sie sicher, dass Sie die CSS-Datei erstellt haben
 
 const products = [
 	{ id: 1, name: 'Brötchen', price: 0.3 },
@@ -10,8 +11,10 @@ function ProductList() {
 	return (
 		<div>
 			{products.map((product) => (
-				<div className="product" key={product.id}>
-					{product.name} - {product.price}€
+				<div key={product.id} className="product">
+					<Link to={`/product/${product.id}`}>
+						{product.name} - {product.price}€
+					</Link>
 				</div>
 			))}
 		</div>
