@@ -2,9 +2,7 @@ import React from 'react';
 import products from './products';
 
 function ProductDetail({ match }) {
-	// Hier könnten Sie Logik hinzufügen, um Produktdetails basierend auf der ID zu laden
 	const productId = match.params.id;
-	// Beispiel: Finden Sie das Produkt in Ihrer Produktliste
 	const product = products.find((p) => p.id.toString() === productId);
 
 	return (
@@ -13,7 +11,6 @@ function ProductDetail({ match }) {
 				<div>
 					<h2>{product.name}</h2>
 					<p>Preis: {product.price}€</p>
-					{/* Weitere Produktdetails hier */}
 				</div>
 			) : (
 				<p>Produkt nicht gefunden</p>
