@@ -1,0 +1,13 @@
+/* App.css */
+
+/* General styles */
+h1 {
+	text-align: left; /* Align left by default */
+}
+
+/* Center alignment for mobile screens */
+@media (max-width: 600px) {
+	h1 {
+		text-align: center; /* Center align on mobile */
+	}
+}

@@ -1,0 +1,38 @@
+/* ProductList.css */
+
+.productList {
+	margin: 10px;
+}
+
+.productRow {
+	display: grid;
+	grid-gap: 10px;
+}
+
+/* First Row */
+.productList > .productRow:first-child {
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* Second Row and Beyond */
+.productList > .productRow:nth-child(n + 2) {
+	grid-template-columns: repeat(3, 1fr); /* Equal columns for all products */
+}
+
+.product {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+/* On screens that are 600px or less */
+@media (max-width: 600px) {
+	.productList > .productRow {
+		grid-template-columns: 1fr; /* Full width for each product on mobile */
+	}
+
+	.product.middle {
+		order: -1; /* Ensure middle product is at the top */
+	}
+}

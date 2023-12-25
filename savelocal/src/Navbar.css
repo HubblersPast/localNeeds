@@ -1,0 +1,43 @@
+/* Existing styles */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* ... other existing styles ... */
+}
+
+/* ... other existing styles for logo, search-bar, and login ... */
+.logo img {
+	height: 75px; /* Adjust this value as needed */
+	width: auto; /* Maintains aspect ratio */
+}
+
+/* Styles for mobile menu */
+.mobile-menu {
+	display: none;
+}
+
+.burger-menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 25px; /* Adjust as needed */
+}
+
+.burger-menu div {
+	background-color: black; /* Color of burger lines */
+	height: 3px; /* Thickness of lines */
+	width: 25px; /* Length of lines */
+}
+
+/* Media query for mobile screens */
+@media (max-width: 600px) {
+	.search-bar,
+	.login {
+		display: none; /* Hide search and login on mobile */
+	}
+
+	.mobile-menu {
+		display: block; /* Show hamburger menu */
+	}
+}
