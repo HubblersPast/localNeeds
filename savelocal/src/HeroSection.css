@@ -1,0 +1,81 @@
+/* HeroSection.css */
+
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Divide the hero section into two columns */
+	align-items: center;
+	height: 400px;
+	background-color: #88ab8e;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.heroContent {
+	z-index: 1;
+	color: white;
+	grid-column: 2 / 3; /* Position the text content in the second column */
+	padding-left: 20px; /* Some left padding for spacing */
+}
+
+.heroImage {
+	position: absolute;
+	left: 0;
+	top: 0; /* Align to the top of the hero section */
+	width: 50%; /* Set width to 50% of the hero section */
+	height: 100%; /* Full height of hero section */
+	object-fit: cover;
+	z-index: 0;
+}
+/* HeroSection.css */
+
+/* ... existing styles ... */
+
+/* Media Query for display sizes of 600px and below */
+@media (max-width: 600px) {
+	.hero {
+		display: flex;
+		align-items: center; /* Center vertically */
+		justify-content: center; /* Center horizontally */
+		text-align: center;
+		padding: 20px; /* Consistent padding on all sides */
+		margin: 0 auto; /* Center the hero section */
+		width: calc(100vw - 40px); /* Full viewport width minus the padding */
+		height: auto; /* Adjust the height as necessary */
+		box-sizing: border-box; /* Include padding in the width calculation */
+	}
+
+	.heroContent {
+		z-index: 2; /* Above the overlay */
+		width: 100%; /* Full width */
+		position: relative; /* Adjust position as needed */
+	}
+
+	.heroImage {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		z-index: 1; /* Below the content and overlay */
+	}
+
+	.hero::after {
+		/* Darker overlay */
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(
+			0,
+			0,
+			0,
+			0.7
+		); /* Increased opacity for more dimming */
+		z-index: 1; /* Same level as the image */
+	}
+}
+
+/* Rest of your styles for h1, p, button */

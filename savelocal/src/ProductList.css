@@ -1,38 +1,34 @@
 /* ProductList.css */
 
 .productList {
-	margin: 10px;
+	margin: 10px auto; /* Center the list and provide margin */
+	max-width: 1200px; /* Maximum width of the container */
 }
 
 .productRow {
 	display: grid;
-	grid-gap: 10px;
-}
-
-/* First Row */
-.productList > .productRow:first-child {
-	grid-template-columns: 1fr 2fr 1fr;
-}
-
-/* Second Row and Beyond */
-.productList > .productRow:nth-child(n + 2) {
-	grid-template-columns: repeat(3, 1fr); /* Equal columns for all products */
+	grid-gap: 30px; /* Increase the spacing between tiles */
+	grid-template-columns: repeat(4, 180px); /* 4 tiles, each 180px wide */
+	justify-content: center; /* Center the grid items in the row */
 }
 
 .product {
-	margin: 10px;
+	width: 180px; /* Fixed width for each product */
 	padding: 10px;
 	border: 1px solid black;
 	border-radius: 5px;
 }
 
-/* On screens that are 600px or less */
-@media (max-width: 600px) {
-	.productList > .productRow {
-		grid-template-columns: 1fr; /* Full width for each product on mobile */
+/* Adjustments for smaller screens (e.g., tablets) */
+@media (max-width: 900px) {
+	.productRow {
+		grid-template-columns: repeat(3, 180px); /* 3 tiles per row */
 	}
+}
 
-	.product.middle {
-		order: -1; /* Ensure middle product is at the top */
+/* Adjustments for mobile screens */
+@media (max-width: 600px) {
+	.productRow {
+		grid-template-columns: repeat(2, 180px); /* 2 tiles per row */
 	}
 }
